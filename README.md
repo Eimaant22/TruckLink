@@ -4,7 +4,7 @@ TruckLink is a role-based web platform for the trucking industry that connects d
 
 ## 🔗 Live Demo
 
-[https://github.com/Eimaant22/TruckLink/]
+(https://trucklink-frontend-u8wd-git-main-duamalik.vercel.app/)
 
 ## 🔗 Backend Repository
 
