@@ -1,98 +1,76 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# TruckLink — Driver Hiring & Onboarding Portal (Backend)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+TruckLink is a role-based web platform for the trucking industry that connects drivers looking for work with recruiters looking to fill open positions, with a platform admin moderating every driver profile before it goes live. This repository contains the **backend** of the project, which I built independently.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 🔗 Live Demo
 
-## Description
+[https://github.com/Eimaant22/TruckLink/]
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🔗 Backend Repository
 
-## Project setup
+[https://github.com/Eimaant22/TruckLink/]
 
-```bash
-$ npm install
-```
+## 🔗 Frontend Repository
 
-## Compile and run the project
+[Add frontend repository link here]
 
-```bash
-# development
-$ npm run start
+## 🚀 My Contribution (Backend)
 
-# watch mode
-$ npm run start:dev
+- Built the backend API using **NestJS**
+- Designed and managed the database schema using **PostgreSQL**
+- Implemented **JWT-based role authentication** for three distinct roles: Driver, Recruiter, and Admin
+- Added route/permission guards so each role only accesses what it's meant to (e.g. recruiters never see unapproved driver profiles)
+- Developed the core backend workflows:
+  - **Driver Profiles** — structured profile creation (personal info, CDL class, endorsements, experience, equipment type, availability), document upload, and profile status tracking (Pending / Approved / Rejected) with timestamped status history
+  - **Moderation** — admin moderation queue to review, approve, reject, or request changes on driver profiles, with comments/reasons
+  - **Recruiter & Job Postings** — recruiter account and company profile management, posting driving positions with requirements (endorsements, experience, route type, location, equipment)
+  - **Matching** — rule-based filtering that returns only approved drivers matching a recruiter's posted requirements
+  - **Admin Controls** — recruiter account approval/suspension, and management of master data (endorsement types, equipment types, regions)
+  - **File Storage** — document uploads (license, medical card) handled via cloud/S3-compatible storage
 
-# production mode
-$ npm run start:prod
-```
+## 🛠️ Tech Stack
 
-## Run tests
+- **Backend:** NestJS (Node.js)
+- **Database:** PostgreSQL
+- **Authentication:** JWT (role-based)
+- **Real-time:** Socket.io (for live status/match notifications)
+- **File Storage:** S3-compatible cloud bucket
+- **Frontend:** React / Next.js (built separately — see link above)
 
-```bash
-# unit tests
-$ npm run test
+## 👥 User Roles
 
-# e2e tests
-$ npm run test:e2e
+| Role | Core Capabilities |
+|------|-------------------|
+| **Driver** | Sign up, build profile, track approval status, browse/apply to matching opportunities |
+| **Driver Recruiter** | Sign up, post job requirements, view/filter matching approved drivers, shortlist or contact them |
+| **Platform Admin** | Review and moderate driver profiles, manage recruiter accounts, manage master data, view platform analytics |
 
-# test coverage
-$ npm run test:cov
-```
+## ⚙️ Getting Started
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+1. Clone this repository
+   ```bash
+   git clone (https://github.com/Eimaant22/TruckLink/)
+   cd TruckLink-Backend
+   ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file with the following variables:
+   ```env
+   PORT=5000
+   DATABASE_URL=your_postgresql_connection_string
+   JWT_SECRET=your_jwt_secret
+   AWS_ACCESS_KEY_ID=your_s3_access_key
+   AWS_SECRET_ACCESS_KEY=your_s3_secret_key
+   AWS_BUCKET_NAME=your_bucket_name
+   ```
+4. Run database migrations (if applicable)
+   ```bash
+   npm run migration:run
+   ```
+5. Start the development server
+   ```bash
+   npm run start:dev
+   ```
+   The API will be available at `http://localhost:5000`.
